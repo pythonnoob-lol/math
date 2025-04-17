@@ -1,0 +1,18 @@
+import importlib
+
+def mathtype():
+    types = input("Type of math (addition, subtraction, multiplication, division): ").strip()  # Get user input and strip whitespace
+    if types == "addition":
+        module = importlib.import_module("addition")
+    elif types == "subtraction":
+        module = importlib.import_module("subtraction")
+    elif types == "multiplication":
+        module = importlib.import_module("multiplication")
+    elif types == "division":
+        module = importlib.import_module("division")
+    else:
+        print("Invalid math type. Please try again.")
+        return
+    print(f"{types.capitalize()} module imported successfully!")
+
+mathtype()
